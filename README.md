@@ -7,7 +7,8 @@ visit - www.techknowlab.com
 The Python GUI for NodeMCU LED Control project is an innovative endeavor that combines the power of Python programming with the versatility of NodeMCU microcontroller to create a user-friendly graphical interface for controlling LEDs. This project aims to simplify the process of interacting with hardware components, making it accessible for both beginners and experienced enthusiasts.
 
 <br>
-![3](https://github.com/techknowlab/Python-GUI-for-NodeMCU-LED-Control-Project/assets/52469430/f43aaffa-11f3-4366-be3c-a9be2d06f9a8)
+![3](https://github.com/techknowlab/Python-GUI-for-NodeMCU-LED-Control-Project/assets/52469430/f9ec57fa-f28b-40d9-a813-df73083b89e1)
+<br>
 
 ## Key Featuresof the Project
 ### User-Friendly GUI
