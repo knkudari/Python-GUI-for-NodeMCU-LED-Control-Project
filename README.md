@@ -3,6 +3,9 @@ Author - Krishnanand Kudari
 <br>
 visit - www.techknowlab.com
 
+![GUI for NodeMCU controlled LED](https://github.com/techknowlab/Python-GUI-for-NodeMCU-LED-Control-Project/assets/52469430/13512dee-c05f-40e3-b2aa-dd63ae125bed)
+
+
 ## About the Project
 Join us on a thrilling adventure with the Python GUI for NodeMCU LED Control project! Imagine the exciting fusion of Python programming and the incredible capabilities of the NodeMCU microcontroller. We're on the brink of introducing a user-friendly graphical interface that will revolutionize how we control LEDs. Our primary goal is simple: we want to make dealing with hardware a breeze, so both beginners and experienced enthusiasts can effortlessly explore the exciting realm of LED control. Prepare yourself for an exploration where innovation seamlessly blends with accessibility!
 
