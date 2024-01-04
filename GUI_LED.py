@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+from tkinter import messagebox
 import requests
 
 class LEDControlGUI:
@@ -14,39 +15,68 @@ class LEDControlGUI:
         style = ttk.Style()
         style.configure("TButton", padding=10, font=('Helvetica', 12))
 
-        self.led1_button = ttk.Button(self.root, text="Toggle LED 1", command=self.toggle_led1)
-        self.led1_button.grid(row=0, column=0, padx=20, pady=20)
+        self.ip_label = ttk.Label(self.root, text="Enter NodeMCU IP:")
+        self.ip_label.grid(row=0, column=0, padx=20, pady=20)
 
-        self.led2_button = ttk.Button(self.root, text="Toggle LED 2", command=self.toggle_led2)
-        self.led2_button.grid(row=0, column=1, padx=20, pady=20)
+        self.ip_entry = ttk.Entry(self.root, width=20)
+        self.ip_entry.grid(row=0, column=1, padx=20, pady=20)
 
-        self.led3_button = ttk.Button(self.root, text="Toggle LED 3", command=self.toggle_led3)
-        self.led3_button.grid(row=1, column=0, padx=20, pady=20)
+        self.connect_button = ttk.Button(self.root, text="Connect", command=self.connect_to_nodemcu)
+        self.connect_button.grid(row=0, column=2, padx=20, pady=20)
 
-        self.led4_button = ttk.Button(self.root, text="Toggle LED 4", command=self.toggle_led4)
-        self.led4_button.grid(row=1, column=1, padx=20, pady=20)
+        self.led1_button = ttk.Button(self.root, text="Toggle Red LED", command=lambda: self.toggle_led("led1"))
+        self.led1_button.grid(row=1, column=0, padx=20, pady=20)
+        self.led1_button.configure(style='Red.TButton')
 
-    def toggle_led1(self):
-        self.toggle_led("led1")
+        self.led2_button = ttk.Button(self.root, text="Toggle Blue LED", command=lambda: self.toggle_led("led2"))
+        self.led2_button.grid(row=1, column=1, padx=20, pady=20)
+        self.led2_button.configure(style='Blue.TButton')
 
-    def toggle_led2(self):
-        self.toggle_led("led2")
+        self.led3_button = ttk.Button(self.root, text="Toggle Green LED", command=lambda: self.toggle_led("led3"))
+        self.led3_button.grid(row=2, column=0, padx=20, pady=20)
+        self.led3_button.configure(style='Green.TButton')
 
-    def toggle_led3(self):
-        self.toggle_led("led3")
+        self.led4_button = ttk.Button(self.root, text="Toggle Yellow LED", command=lambda: self.toggle_led("led4"))
+        self.led4_button.grid(row=2, column=1, padx=20, pady=20)
+        self.led4_button.configure(style='Yellow.TButton')
 
-    def toggle_led4(self):
-        self.toggle_led("led4")
+        self.create_button_styles()
+
+    def create_button_styles(self):
+        ttk.Style().configure('Red.TButton', background='red', foreground='white')
+        ttk.Style().configure('Blue.TButton', background='blue', foreground='white')
+        ttk.Style().configure('Green.TButton', background='green', foreground='white')
+        ttk.Style().configure('Yellow.TButton', background='yellow', foreground='black')
+
+    def connect_to_nodemcu(self):
+        node_ip = self.ip_entry.get()
+        if not node_ip:
+            messagebox.showerror("Error", "Please enter NodeMCU IP address.")
+            return
+
+        try:
+            response = requests.get(f"http://{node_ip}/")
+            if response.status_code == 200:
+                messagebox.showinfo("Success", "Successfully connected to NodeMCU.")
+            else:
+                messagebox.showerror("Error", "Failed to connect to NodeMCU.")
+        except requests.ConnectionError:
+            messagebox.showerror("Error", "Failed to connect to NodeMCU.")
 
     def toggle_led(self, led):
+        node_ip = self.ip_entry.get()
+        if not node_ip:
+            messagebox.showerror("Error", "Please enter NodeMCU IP address.")
+            return
+
         try:
-            response = requests.get(f"http://<your_nodemcu_ip>/{led}")
+            response = requests.get(f"http://{node_ip}/{led}")
             if response.status_code == 200:
-                print(f"Successfully toggled {led}")
+                messagebox.showinfo("Success", f"Successfully toggled {led}")
             else:
-                print(f"Failed to toggle {led}")
+                messagebox.showerror("Error", f"Failed to toggle {led}")
         except requests.ConnectionError:
-            print("Failed to connect to NodeMCU")
+            messagebox.showerror("Error", "Failed to connect to NodeMCU")
 
 if __name__ == "__main__":
     root = tk.Tk()
