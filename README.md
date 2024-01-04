@@ -23,4 +23,5 @@ Robust error handling mechanisms are implemented to enhance the reliability of t
 The project includes comprehensive documentation and a user guide, offering detailed instructions on setting up the hardware, installing the required software, and navigating the GUI. This documentation is designed to facilitate a smooth user experience and support the project's community.
 ### Open-Source Collaboration
 The Python GUI for NodeMCU LED Control project encourages open-source collaboration. The source code is made available on a platform like GitHub, allowing developers and enthusiasts to contribute, share ideas, and enhance the project further.
+<br>
 ![3](https://github.com/techknowlab/Python-GUI-for-NodeMCU-LED-Control-Project/assets/52469430/f43aaffa-11f3-4366-be3c-a9be2d06f9a8)
