@@ -15,6 +15,8 @@ Join us on a thrilling adventure with the Python GUI for NodeMCU LED Control pro
 
 ![Circuit_NodeMCU GUI LED1](https://github.com/techknowlab/Python-GUI-for-NodeMCU-LED-Control-Project/assets/52469430/09a83e84-2d47-46d2-919b-510359979716)
 
+https://youtu.be/o2Cb6yMxNKA
+
 ## Key Features of the Project
 ### Super Easy Control Center
 Dive into a hassle-free LED control experience with a slick and user-friendly graphical interface. No tech wizardry required – just point, click, and let the LEDs dance to your tune!
